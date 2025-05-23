@@ -27,20 +27,22 @@ const ProjectCard = ({ src, title, description, githubUrl, liveUrl }: Props) => 
         ease-in-out
         hover:scale-105
         hover:shadow-[0_0_15px_4px_rgba(59,130,246,0.7)]
+        min-h-[400px]  /* Ensure all cards have minimum same height */
+        flex-1          /* Let card grow equally in flex row */
       "
     >
-<div className="relative w-full h-64 md:h-48 lg:h-64">
-  <Image
-    src={src}
-    alt={title}
-    fill
-    className="object-cover object-top"
-    sizes="(max-width: 760px) 100vw,
-           (max-width: 1800px) 50vw,
-           33vw"
-    priority
-  />
-</div>
+      <div className="relative w-full h-64 md:h-48 lg:h-64">
+        <Image
+          src={src}
+          alt={title}
+          fill
+          className="object-contain"  /* Use contain so image fits fully without cropping */
+          sizes="(max-width: 760px) 100vw,
+                 (max-width: 1800px) 50vw,
+                 33vw"
+          priority
+        />
+      </div>
 
       <div className="relative p-4 flex flex-col justify-between flex-grow">
         <div>
