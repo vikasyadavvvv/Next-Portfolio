@@ -56,25 +56,25 @@ const Skills = () => {
 
 {/* ===== Skill Description Section ===== */}
 <div className="w-full z-10 px-6 md:px-20 mt-16 text-left max-w-5xl">
-  <h3 className="text-4xl font-bold text-white mb-6">Skill Overview</h3>
+  <h3 className="text-2xl font-bold text-white mb-6">Skill Overview</h3>
   
-  <p className="text-gray-300 mb-4 text-xl">
+  <p className="text-gray-300 mb-4 text-l">
     <strong>Frontend:</strong> I specialize in building modern and responsive user interfaces using <strong>React.js</strong>, styled with <strong>Tailwind CSS</strong> and enhanced by <strong>Framer Motion</strong> for animations. I follow clean and reusable component architecture.
   </p>
 
-  <p className="text-gray-300 mb-4 text-xl">
+  <p className="text-gray-300 mb-4 text-l">
     <strong>Backend:</strong> I develop robust REST APIs using <strong>Node.js</strong> and <strong>Express.js</strong>, and implement real-time features with <strong>Socket.io</strong>. I focus on secure and scalable backend logic.
   </p>
 
-  <p className="text-gray-300 mb-4 text-xl">
+  <p className="text-gray-300 mb-4 text-l">
     <strong>Database:</strong> I use <strong>MongoDB</strong> as my main database and have also started working with <strong>Convex</strong> for serverless, real-time data handling.
   </p>
 
-  <p className="text-gray-300 mb-4 text-xl">
+  <p className="text-gray-300 mb-4 text-l">
     <strong>Authentication:</strong> I integrate <strong>Clerk</strong> for authentication, enabling features like social login, user management, and session security.
   </p>
 
-  <p className="text-gray-300 text-xl">
+  <p className="text-gray-300 text-l">
     <strong>UI Libraries:</strong> I use <strong>shadcn/ui</strong> along with Tailwind CSS to build clean and accessible components with consistent design patterns.
   </p>
 </div>

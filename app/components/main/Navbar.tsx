@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react"; // for mobile icon toggle
 import { Socials } from "@/constants"; // Import Socials from the constants file
 import Image from "next/image";
 
-const scrollToSection = (id:string) => {
+const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
@@ -20,7 +20,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 bg-[#030014c2] backdrop-blur-md shadow-lg shadow-[#2A0E61]/50 z-50 px-6 md:px-10">
+    <div
+      className={`w-full h-[65px] fixed top-0 bg-[#030014c2] backdrop-blur-md shadow-lg shadow-[#2A0E61]/50 z-50 px-6 md:px-10 transition-opacity duration-1000 ${
+        fadeIn ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <div className="w-full h-full flex items-center justify-between px-2">
         {/* Logo / Name */}
         <div
@@ -52,9 +56,9 @@ const Navbar = () => {
           {Socials.map((social) => (
             <a
               key={social.name}
-              href={social.link} // Use the link from the Socials array
-              target="_blank" // Opens in a new tab
-              rel="noopener noreferrer" // Security for external links
+              href={social.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="cursor-pointer hover:scale-110 transition-transform duration-300"
             >
               <Image
@@ -98,9 +102,9 @@ const Navbar = () => {
               {Socials.map((social) => (
                 <a
                   key={social.name}
-                  href={social.link} // Use the link from the Socials array
-                  target="_blank" // Opens in a new tab
-                  rel="noopener noreferrer" // Security for external links
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="cursor-pointer"
                 >
                   <Image

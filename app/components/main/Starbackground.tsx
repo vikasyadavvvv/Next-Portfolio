@@ -4,17 +4,27 @@ import { useRef, useState, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
-// @ts-ignore
+
+// @ts-expect-error: maath module has no types
 import * as random from "maath/random/dist/maath-random.esm";
 
-const StarBackground = (props: any) => {
-  const ref = useRef<THREE.Points>(null!);
+type StarBackgroundProps = React.JSX.IntrinsicElements["points"] & {
+  count?: number;
+  radius?: number;
+};
+
+const StarBackground = ({
+  count = 1500,
+  radius = 1.2,
+  ...props
+}: StarBackgroundProps) => {
+  const ref = useRef<THREE.Points>(null!); // ✅ Correctly typed
 
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(1500 * 3), { radius: 1.2 })
+    random.inSphere(new Float32Array(count * 3), { radius })
   );
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (ref.current) {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
@@ -24,6 +34,7 @@ const StarBackground = (props: any) => {
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points
+        // @ts-expect-error drei Points ref mismatch
         ref={ref}
         positions={sphere}
         stride={3}

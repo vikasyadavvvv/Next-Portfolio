@@ -42,9 +42,8 @@ export default function HeroContent() {
         {/* Subtitle */}
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-4 max-w-[600px] leading-relaxed"
-        >
-          I'm a passionate Full Stack Developer proficient in the MERN stack, with hands-on experience
+          className="text-lg text-gray-400 my-4 max-w-[600px] leading-relaxed">
+          I&apos;m a passionate Full Stack Developer proficient in the MERN stack, with hands-on experience
           building real-time web applications. Explore my projects to see how I blend creativity with functionality.
         </motion.p>
 

@@ -25,13 +25,7 @@ const Projects = () => {
           githubUrl="https://github.com/vikasyadavvvv/CryptoRadar.git"
           liveUrl="https://cryptoradarr.netlify.app/"
         />
-        <ProjectCard
-          src="/SpaceWebsite.png"
-          title="Space Themed Website"
-          description="A fun, space-themed landing page built with modern CSS and design elements."
-          githubUrl="https://github.com/vikasyadavvvv/space-website"
-          liveUrl="https://space-website.vercel.app"
-        />
+      
       </div>
     </div>
   );
